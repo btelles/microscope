@@ -3,9 +3,13 @@
 </head>
 <body>
   <div id="container">
-    <header class="navbar"><a href="/" class="brand">Microscope</a></header>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a href="/" class="brand">Microscope</a>
+      </div>
+    </header>
     <div id="main" class="row-fluid">
-      {{>postsList}}
+      {{> postsList}}
     </div>
   </div>
 </body>
