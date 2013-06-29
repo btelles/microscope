@@ -3,13 +3,9 @@
 </head>
 <body>
   <div id="container">
-    <header class="navbar">
-      <div class="navbar-inner">
-        <a href="/" class="brand">Microscope</a>
-      </div>
-    </header>
+    {{> header}}
     <div id="main" class="row-fluid">
-      {{> postsList}}
+      {{renderPage}}
     </div>
   </div>
 </body>
