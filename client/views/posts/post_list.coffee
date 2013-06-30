@@ -1,3 +1,5 @@
 Template.postsList.helpers
   posts: ->
-    App.Posts.find()
+    App.Posts.find {},
+      sort:
+        submitted: -1

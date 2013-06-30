@@ -1,4 +1,1 @@
-Meteor.publish 'posts', ->
-  App.Posts.find {},
-    fields:
-      author: false
+Meteor.publish 'posts', -> App.Posts.find {}
