@@ -1,1 +1,1 @@
-Meteor.publish 'posts', -> App.Posts.find {}
+Meteor.publish 'posts', -> Posts.find {}

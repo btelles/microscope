@@ -1,14 +1,19 @@
-this.App = {}
-App.Posts = new Meteor.Collection('posts')
+this.Posts = new Meteor.Collection('posts')
 
-App.Posts.allow
+Posts.allow
   insert: (userId, doc) ->
     !!userId
+  update: ownsDocument
+  remove: ownsDocument
+
+Posts.deny
+  update: (userId, post, fieldNames) ->
+    (_.without(fieldNames, 'url', 'title').length > 0)
 
 Meteor.methods
   post: (postAttributes) ->
     user = Meteor.user()
-    postWithSameLink = App.Posts.findOne url: postAttributes.url
+    postWithSameLink = Posts.findOne url: postAttributes.url
 
     # ensure the user is logged in
     if !user
@@ -39,4 +44,4 @@ Meteor.methods
       , 5 * 1000
       future.wait()
 
-    App.Posts.insert post
+    Posts.insert post

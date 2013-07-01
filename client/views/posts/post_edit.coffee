@@ -1,6 +1,6 @@
 Template.postEdit.helpers
   post: ->
-    App.Posts.findOne Session.get('currentPostId')
+    Posts.findOne Session.get('currentPostId')
 
 Template.postEdit.events
   'submit form': (e) ->
@@ -14,7 +14,7 @@ Template.postEdit.events
       url: form.find('[name=url]').val()
       title: form.find('[name=title]').val()
 
-    App.Posts.update currentPostId, $set: postProperties, (error) ->
+    Posts.update currentPostId, $set: postProperties, (error) ->
       if error
         #display the error to the user
         alert error.reason
@@ -26,5 +26,5 @@ Template.postEdit.events
 
     if confirm 'Delete this post?'
       currentPostId = Session.get 'currentPostId'
-      App.Posts.remove currentPostId
+      Posts.remove currentPostId
       Meteor.Router.to 'postsList'
