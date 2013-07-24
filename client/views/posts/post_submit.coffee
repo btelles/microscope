@@ -3,7 +3,7 @@ Template.postSubmit.events
     e.preventDefault()
 
     form = $(e.target)
-    post = 
+    post =
       url: form.find('[name=url]').val()
       title: form.find('[name=title]').val()
       message: form.find('[name=message]').val()
@@ -15,4 +15,4 @@ Template.postSubmit.events
         if error.error == 302
           Meteor.Router.to 'postPage', error.details
         else
-          Meteor.Router.to('postsList')
+          Meteor.Router.to('postsList', id)
