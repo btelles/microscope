@@ -1,0 +1,9 @@
+{
+  "name": "errorsExample",
+  "description": 'The standard errors that come with the book at book.discovermeteor.com',
+  "homepage": "https://github.com/btelles/microsite.git",
+  "author": "btelles",
+  "version": "embryonic",
+  "git": "https://github.com/btelles/microsite.git",
+  "packages": {}
+}
