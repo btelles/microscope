@@ -7,3 +7,8 @@ preserve-inputs
 bootstrap
 coffeescript
 accounts-password
+standard-app-packages
+errors
+page-js-ie-support
+router
+spin
